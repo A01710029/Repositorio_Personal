@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Preguntas - Lab 3</title>
+    </head>
+
+    <body>
+        <nav>
+            <h3><center>Navegación</center></h3>
+            <center><select onchange="window.location.href= this.value;">
+                <option value="../index.html" selected>Intro</option>
+                <optgroup label="Preguntas">
+                    <option value="preguntas/preguntas-lab1.html">Lab 1</option>
+                    <option value="preguntas/preguntas-lab3.html">Lab 3</option>
+                </optgroup>
+            </select></center>
+        </nav>         
+
+        <center> ------------ </center><br></br>
+        
+        <strong>
+            Como ingeniero de software ¿cuál es tu recomendación sobre el uso de !important en un CSS?
+        </strong><br></br>
+            Mi recomendación es usar “!important” con moderación y de manera muy deliberada, ya que, al permitir sobrescribir estilos, 
+            ignorar el orden de precedencia normal y modificar la especificidad, puede generar complicaciones en el código para su 
+            mantenimiento y su legibilidad. Se prefiere usarlo solamente cuando es totalmente necesario, priorizando la reestructuración 
+            del CSS y los ajustes manuales en la especificidad en vez de utilizar esta herramienta. También, se recomienda documentar 
+            detalladamente su uso y su propósito dentro de un programa si se utiliza para el beneficio de otros desarrolladores a futuro.
+            <br></br>
+        <strong>
+            Si se pone una imagen de fondo en una página HTML, ¿por qué debe escogerse con cuidado?
+        </strong><br></br>
+            Si se decide poner una imagen de fondo en una página HTML, se debe escoger con cuidado ya que tiene un efecto en varios 
+            aspectos de la página. Para empezar, afecta la presentación visual de la página, teniendo la habilidad de mejorar o empeorar 
+            la apariencia y usabilidad de la misma dependiendo de si el texto sigue siendo visible, si es de alta calidad o si es demasiado 
+            llamativa, por ejemplo. También, es importante considerar si es coherente tanto con la identidad de la página y con el resto de 
+            los elementos de estilo de la misma. Finalmente, afecta el rendimiento y compatibilidad de la página, al tener que ser cargada 
+            cada vez que se accede a la página. Si es un archivo demasiado grande, la página va a cargar más lentamente, pero si es demasiado 
+            pequeña o inflexible, puede perder calidad o distorsionarse en dispositivos muy grandes o muy pequeños. 
+            <br></br>
+        <strong>
+            Como ingeniero de software, ¿cuál es tu recomendación al elegir las unidades de un propiedad de estilo entre %, px y pt?
+        </strong><br></br>
+            Al ser unidades muy distintas, mi recomendación es utilizar la que mejor se adapte al proyecto basado en lo que se espera del diseño. 
+            Para % (o porcentaje), se recomienda su uso para diseños responsivos donde se quiera una gran compatibilidad con distintos dispositivos, 
+            ya que está basado en la modificación dinámica de márgenes y rellenos a base del tamaño de los contenedores. Para px (o pixeles), se 
+            recomienda su uso para diseños con consistencia visual, al permitir definir valores absolutos y tener un control muy preciso del tamaño 
+            y la posición de los elementos. Para pt (o puntos), no se frecuenta su uso en diseños web, ya que usualmente se utilizan en diseños de 
+            documentos para impresión, particularmente para el tamaño de la fuente. Al igual que px, permite mantener una consistencia visual precisa, 
+            pero esto implica que no permite diseños responsivos. 
+            <br></br>
+        <strong>
+            ¿Por qué el uso de una versión minimizada del CSS mejora el rendimiento del sitio?
+        </strong><br></br>
+            El uso de una versión minimizada del CSS mejora el rendimiento de un sitio porque reduce el tamaño del archivo CSS, eliminando el código 
+            “basura”. Esto resulta en cargas más rápidas, ya que se tiene que transmitir y descargar un archivo más pequeño y se tiene que procesar menos 
+            información, ya que una versión minimizada de CSS solamente contiene el código necesario y relevante. También, este tipo de archivo se puede 
+            almacenar en el caché del navegador, lo que mejora aún más el rendimiento ya que no se tiene que volver a descargar si se vuelve a visitar la 
+            página.  
+            <br></br>
+        
+        <h2>Bibliografía</h2>
+            UXDivi. (2020, 26 octubre). !Important: ¿Qué es y cuándo usarlo? Recuperado de <a href="https://uxdivi.com/blog/important-que-es-y-cuando-usarlo">https://uxdivi.com/blog/important-que-es-y-cuando-usarlo</a> 
+            <br></br>
+            DesarrolloWeb.com. (2021, 27 diciembre). Aprende a usar el elemento meta de HTML. Recuperado de <a href="https://desarrolloweb.com/articulos/1384.php"> https://desarrolloweb.com/articulos/1384.php</a> 
+            <br></br>
+            Mozilla Developer Network. (2023, 2 agosto). Valores y unidades. Recuperado de <a href="https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Values_and_units">https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Values_and_units</a> 
+            <br></br>
+            WooRank. (2019, 17 septiembre). Por qué importa la minificación. Recuperado de <a href="https://www.woorank.com/es/edu/seo-guides/por-que-importa-la-minificacion">https://www.woorank.com/es/edu/seo-guides/por-que-importa-la-minificacion</a> 
+            <br></br>
+            
+    </body>
+
+    <center><button onclick="window.location.href='../index.html'">Volver</button></center>
+
+    <br></br>
+
+    <center> ------------ </center><br></br>
+
+    <h3><center>Herramientas</center></h3>
+
+    <footer>
+        Editor utilizado: <a href="https://code.visualstudio.com/">Visual Studio Code</a>
+    </footer>
+</html>
