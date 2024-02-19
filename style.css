@@ -1,3 +1,8 @@
+/* Tailwind directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Barra de navegación */
 nav {
   background-color: #8E7AB5;
@@ -139,4 +144,8 @@ footer {
   color: #fff; 
   padding: 20px;
   text-align: center;
+}
+
+.footer p{
+  margin-bottom: 5px;
 }
