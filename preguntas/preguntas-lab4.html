@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Preguntas - Lab 4</title>
+        <link rel="stylesheet" href="../style.min.css">
+    </head>
+
+    <body>
+        <nav>
+            <h2>Navegación</h2>
+            <select onchange="window.location.href= this.value;">
+                <option value="../index.html" selected>Intro</option>
+                <optgroup label="Preguntas">
+                    <option value="preguntas-lab1.html">Lab 1</option>
+                    <option value="preguntas-lab3.html">Lab 3</option>
+                    <option value="preguntas-lab4.html">Lab 4</option>
+                </optgroup>
+            </select>
+        </nav>    
+
+        <strong>
+            ¿Qué diferencias y semejanzas hay entre Java y JavaScript?
+        </strong><br></br>
+            Java y Javascript, aunque ambos son lenguajes de programación comúnmente utilizados 
+            en la industria que comparten la sintaxis básica, como sus nombres similares, difieren 
+            en muchas de sus características. Para empezar, Java es un lenguaje de programación de 
+            propósito general que tiene una variedad de usos, mientras que JavaScript es un lenguaje 
+            de programación interpretado y principalmente se utiliza en el desarrollo de páginas web. 
+            Relacionado a esto, programas de Java deben ser ejecutados dentro de la Máquina Virtual 
+            Java, mientras que los programas de JavaScript pueden ser ejecutados dentro de un navegador
+            web o Node.js. Por otro lado, tienen diferencias notables en sus estructuras internas. 
+            Java usa un tipado estático, requiriendo que las variables sean declaradas explícitamente, 
+            mientras que JavaScript usa un tipado dinámico, lo que significa que el tipo de las variables 
+            puede cambiar en cualquier parte del programa. Además, Java sigue el paradigma de orientación 
+            a objetos para herencia, mientras que JavaScript utiliza prototipos en vez de clases en su 
+            proceso de herencia de objetos.  
+            <br></br>
+        <strong>
+            ¿Qué métodos tiene el objeto Date? (Menciona al menos 5)
+        </strong><br></br>
+            El objeto Date tiene los métodos <strong>getDate()</strong>, que permite 
+            regresar el día del mes para una fecha específica, <strong>getMonth()</strong>, 
+            que permite regresar el mes para una fecha específica, 
+            <strong>getFullYear()</strong>, que permite regresar el año para una fecha 
+            específica, <strong>getHours()</strong>, que permite regresar la hora para 
+            una fecha específica según la hora local y <strong>getTime()</strong>, que permite 
+            regresar la fecha y hora específicas en milisegundos según la hora universal. 
+            <br></br>
+        <strong>
+            ¿Qué métodos tienen los arreglos? (Menciona al menos 5)
+        </strong><br></br>
+            Los arreglos tienen los métodos <strong>push()</strong>, que permite agregar elementos 
+            al final de un arreglo, <strong>pop()</strong>, que permite eliminar y regresar el último 
+            elemento de un arreglo, <strong>splice()</strong>, que permite eliminar un elemento en un
+            índice específico en un arreglo, <strong>indexOf()</strong>, que permite regresar el índice 
+            de la primera instancia de un elemento específico en un arreglo (o -1 si no existe) y 
+            <strong>forEach()</strong>, que permite ejecutar una función de manera iterativa a cada 
+            elemento de un arreglo, simulando un for loop.  
+            <br></br>
+        <strong>
+            ¿Cómo se declara una variable con alcance local dentro de una función?
+        </strong><br></br>
+            Para declarar una variable con alcance local dentro de una función, se debe utilizar las 
+            claves <strong>var</strong>, <strong>let</strong> o <strong>const</strong> en su declaración, 
+            antes del nombre de la variable. 
+            <br></br>
+        <strong>
+            ¿Qué implicaciones tiene utilizar variables globales dentro de funciones?
+        </strong><br></br>
+            Utilizar variables globales dentro de funciones implica que estas variables pueden ser accedidas 
+            y modificadas en cualquier parte del código por cualquier función. Esta es una mala práctica, ya 
+            que puede complicar el debugging, porque no se puede rastrear fácilmente las modificaciones de la 
+            variable. Esto en sí también afecta la predictibilidad y reutilización de las funciones dependientes 
+            de estas variables, ya que las variables globales pueden ser modificadas fuera del contexto de su uso 
+            dentro de la misma. Por otro lado, pone en riesgo la seguridad del código, por su condición de ser 
+            modificables en cualquier y por cualquier parte del código.
+            <br></br>
+    
+        <h3>Bibliografía</h3>
+            Hack A Boss. (2023, 23 mayo). Diferencias entre JavaScript y Java. Recuperado de <a href="https://www.hackaboss.com/blog/diferencias-javascript-java">https://www.hackaboss.com/blog/diferencias-javascript-java</a> 
+            <br></br>
+            IONOS Digital Guide. (2023, 3 noviembre). Kava vs. JavaScript: Diferencias y similitudes. Recuperado de <a href="https://www.ionos.mx/digitalguide/paginas-web/desarrollo-web/java-vs-javascript/">https://www.ionos.mx/digitalguide/paginas-web/desarrollo-web/java-vs-javascript/</a> 
+            <br></br>
+            Mozilla Developer Network. (2023, 5 agosto). Date - JavaScript. Recuperado de <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date">https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date</a> 
+            <br></br>
+            Mozilla Developer Network. (2023, 15 diciembre). Array - JavaScript. Recuperado de <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array">https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array</a> 
+            <br></br>
+
+        <h3> Ejercicios de Javascript </h3>
+        <script src="../lab4.js"> </script>
+            
+    </body>
+
+    <div class="container">
+        <button class="button" onclick="window.location.href='../index.html'">Volver</button>
+    </div>
+
+    <br></br>
+
+    <footer>
+        <h2>Herramientas</h2>
+        Editor utilizado: <a href="https://code.visualstudio.com/">Visual Studio Code</a>
+    </footer>
+</html>
