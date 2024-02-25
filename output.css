@@ -736,3 +736,13 @@ button[type="submit"]:hover {
   text-decoration: none;
   color: #8E7AB5;
 }
+
+/* Imagenes Password */
+.password-img {
+  display: none; 
+}
+
+.password-img img {
+  max-width: 100%; 
+  margin-bottom: 10px;
+}

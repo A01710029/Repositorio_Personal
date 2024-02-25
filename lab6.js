@@ -1,6 +1,14 @@
 //Print a la página
 document.write("<strong> Ejercicio A: </strong> Validador de Passwords <br></br>");
 
+//Agregar imágenes dependiendo en el estado de la contraseña
+document.write("<div id='imgInvalida' class='password-img'>");
+document.write("<img src='../objection.jpg' alt='Objection! Tu contraseña es inválida!'>");
+document.write("</div>");
+document.write("<div id='imgValida' class='password-img'>");
+document.write("<img src='../eureka.jpg' alt='Eureka! Tu contraseña es válida!'>");
+document.write("</div>");
+
 //Crear botones para escribir y confirmar contraseña
 document.write("<div class='container'>");
 document.write("<form id='passwordForm'>");
@@ -45,10 +53,15 @@ function validarPassword() {
     }
 
      // Mostrar problemas identificados
+     //Con imágenes correspondientes
      if (verificaciones.length > 0) {
+        imgInvalida.style.display = "block";
+        imgValida.style.display = "none";
         mensaje.innerHTML = verificaciones.join("<br>");
         mensaje.className = "invalido";
     } else {
+        imgInvalida.style.display = "none";
+        imgValida.style.display = "block";
         mensaje.textContent = "Tu contraseña es segura :D ";
         mensaje.className = "valido";
     }
