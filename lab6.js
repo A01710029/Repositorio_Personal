@@ -4,8 +4,8 @@ document.write("<strong> Ejercicio A: </strong> Validador de Passwords <br></br>
 //Crear botones para escribir y confirmar contraseña
 document.write("<div class='container'>");
 document.write("<form id='passwordForm'>");
-document.write("<input type='password' id='password' placeholder='Enter password'>");
-document.write("<input type='password' id='confirmPassword' placeholder='Confirm password'>");
+document.write("<input type='password' id='password' placeholder='Escribe tu contraseña'>");
+document.write("<input type='password' id='confirmPassword' placeholder='Confirma tu contraseña'>");
 document.write("<div class='mensaje' id='mensaje'></div>");
 document.write("<button type='submit'>Validar</button>");
 document.write("</form>");
