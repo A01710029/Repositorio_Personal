@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Preguntas - Lab 6</title>
+        <link rel="stylesheet" href="../output.css">
+    </head>
+
+    <body>
+        <nav>
+            <h2>Navegación</h2>
+            <select onchange="window.location.href= this.value;">
+                <option value="../index.html" selected>Intro</option>
+                <optgroup label="Preguntas">
+                    <option value="preguntas-lab1.html">Lab 1</option>
+                    <option value="preguntas-lab3.html">Lab 3</option>
+                    <option value="preguntas-lab4.html">Lab 4</option>
+                    <option value="preguntas-lab5.html">Lab 5</option>
+                    <option value="preguntas-lab6.html">Lab 6</option>
+                </optgroup>
+            </select>
+        </nav>         
+        
+        <strong>
+            ¿Por qué es una buena práctica usar JavaScript para checar que sean válidos los inputs de las formas antes de enviar los datos al servidor?
+        </strong><br></br>
+            Es buena práctica usar JavaScript para checar la validez de los inputs de las formas antes de enviar los datos al servidor ya que nos permite 
+            validar desde el lado del usuario, lo que tiene muchos beneficios. Para empezar, permite reconocer errores en los inputs antes de mandar una 
+            forma, lo que reduce el tiempo de procesamiento, el uso de ancho de banda y la carga en el servidor, al solo mandar la forma cuando todo está 
+            validado. También, se considera una práctica importante de seguridad al evitar que datos no válidos lleguen al servidor, ya que no se mandan 
+            hasta después de cumplir ciertas reglas.  
+            <br></br>
+        <strong>
+            ¿Cómo puedes saltarte la seguridad de validaciones hechas con JavaScript?
+        </strong><br></br>
+            Se puede saltar la seguridad de validaciones hechas con JavaScript con una serie de modificaciones, ya que las validaciones ocurren desde el 
+            lado del usuario. Para empezar, lo más fácil es desactivar JavaScript en el navegador, una opción presente en la configuración del mismo. 
+            Ligeramente más complicado, se puede abrir las herramientas de desarrollo del navegador y modificar el código desde ahí o utilizar bots para 
+            sobrepasar la forma por completo y mandar los datos directamente al servidor. 
+            <br></br>
+        <strong>
+            Si te puedes saltar la seguridad de las validaciones de JavaScript, entonces ¿por qué la primera pregunta dice que es una buena práctica?
+        </strong><br></br>
+            Aunque se puede saltar la seguridad de las validaciones de JavaScript, aún así se considera buena práctica utilizarlas porque es una de las 
+            mejores maneras existentes de validar las respuestas de manera rápida, eficiente y con la menor carga y comunicación de datos errónea entre 
+            el navegador y el servidor. Puede ser que no sea una buena medida de seguridad, pero este aspecto se puede complementar con otras medidas 
+            menos fáciles de sobrepasar y no elimina los beneficios de velocidad y retroalimentación directa al usuario.
+            <br></br>
+
+        <h3>Bibliografía</h3>
+            Mozilla Developer Network. (2023, 24 julio). Expresiones Regulares. Recuperado de https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_expressions<a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_expressions"></a> 
+            <br></br>
+            Mozilla Developer Network. (2023, 1 septiembre). Validación de Formularios. Recuperado de https://developer.mozilla.org/es/docs/Learn/Forms/Form_validation<a href="https://developer.mozilla.org/es/docs/Learn/Forms/Form_validation"></a> 
+            <br></br>
+
+        <h3> Ejercicios de Javascript </h3>
+        <script src="../lab6.js"> </script>
+
+    </body>
+
+    <div class="container">
+        <button class="button" onclick="window.location.href='../index.html'">Volver</button>
+    </div>
+
+    <br></br>
+
+    <footer>
+        <h2>Herramientas</h2>
+        <p>Editor utilizado: <a href="https://code.visualstudio.com/">Visual Studio Code</a></p>
+        <p>Framework utilizado: <a href="https://tailwindcss.com/">Tailwind</a></p>
+    </footer>
+</html>

@@ -697,3 +697,42 @@ footer {
 .footer p{
   margin-bottom: 5px;
 }
+
+/* Password */
+
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.mensaje {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+.valido {
+  color: #B784B7;
+}
+.invalido {
+  color: #E493B3;
+}
+
+/* Validar */
+button[type="submit"] {
+  background: none; 
+  border: none; 
+  color: #B784B7;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-decoration: underline; 
+  font-size: inherit; 
+  cursor: pointer; 
+}
+
+button[type="submit"]:hover {
+  text-decoration: none;
+  color: #8E7AB5;
+}
