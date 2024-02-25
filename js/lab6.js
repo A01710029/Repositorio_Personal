@@ -3,10 +3,10 @@ document.write("<strong> Ejercicio A: </strong> Validador de Passwords <br></br>
 
 //Agregar imágenes dependiendo en el estado de la contraseña
 document.write("<div id='imgInvalida' class='password-img'>");
-document.write("<img src='../objection.jpg' alt='Objection! Tu contraseña es inválida!'>");
+document.write("<img src='../img/objection.jpg' alt='Objection! Tu contraseña es inválida!'>");
 document.write("</div>");
 document.write("<div id='imgValida' class='password-img'>");
-document.write("<img src='../eureka.jpg' alt='Eureka! Tu contraseña es válida!'>");
+document.write("<img src='../img/eureka.jpg' alt='Eureka! Tu contraseña es válida!'>");
 document.write("</div>");
 
 //Crear botones para escribir y confirmar contraseña
