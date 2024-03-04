@@ -65,6 +65,20 @@ const server = http.createServer((request, response) => {
     return;
     }
 
+    //agregar imagenes
+    if(request.url == "/img/foto-reciente.jpg"){
+        response.setHeader("Content-Type", "text/css");
+        filesystem.readFile('../img/foto-reciente.jpg', function(err, data) {
+            if(err){
+                response.writeHead(500);
+                return response.end("Error con imagen");
+            }
+        response.write(data);
+        response.end();
+    });
+    return;
+    }
+
     if(request.url == "/" || request.url == "/index.html") { //root
         response.setHeader("Content-Type", "text/html");
         response.write(header);
