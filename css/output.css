@@ -747,3 +747,19 @@ button[type="submit"]:hover {
   max-width: 100%; 
   margin-bottom: 10px;
 }
+
+/* Recs */
+
+.label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.input {
+  width: calc(100% - 20px);
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
