@@ -6,6 +6,14 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 
+const path = require("path");
+
+//Para utilizar css
+app.use("/css", express.static(path.join(__dirname, "../css")));
+
+//Para utilizar imagenes
+app.use("/img", express.static(path.join(__dirname, "../img")));
+
 //Barra de navegación de página
 //Modificado para operar con url en vez de archivos
 const header = `
