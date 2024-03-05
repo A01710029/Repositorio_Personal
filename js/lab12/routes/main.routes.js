@@ -2,9 +2,12 @@
 const  express = require("express");
 const router = express.Router();
 
+//Para acceder a datos de usuario
+let recs = [];
+
 //Para la ruta root (página principal)
 router.get('/',(request, response) =>{
-    response.render('index.ejs');
+    response.render('index.ejs', {recs: recs});
 })
 
 //Para la ruta lab1
