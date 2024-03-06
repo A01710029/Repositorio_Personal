@@ -47,7 +47,7 @@ const server = http.createServer( (request, response) => {
 
     if(request.url == "/css/output.css"){
         response.setHeader("Content-Type", "text/css");
-        filesystem.readFile(".../css/output.css", function(err, data) {
+        filesystem.readFile(".../../css/output.css", function(err, data) {
             if(err){
                 response.writeHead(500);
                 return response.end("Error cargando css");

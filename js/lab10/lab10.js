@@ -54,7 +54,7 @@ const server = http.createServer((request, response) => {
     //agregar css
     if(request.url == "/css/output.css"){
         response.setHeader("Content-Type", "text/css");
-        filesystem.readFile('../css/output.css', function(err, data) {
+        filesystem.readFile('../../css/output.css', function(err, data) {
             if(err){
                 response.writeHead(500);
                 return response.end("Error con css");
@@ -68,7 +68,7 @@ const server = http.createServer((request, response) => {
     //agregar imagenes
     if(request.url == "/img/foto-reciente.jpg"){
         response.setHeader("Content-Type", "text/css");
-        filesystem.readFile('../img/foto-reciente.jpg', function(err, data) {
+        filesystem.readFile('../../img/foto-reciente.jpg', function(err, data) {
             if(err){
                 response.writeHead(500);
                 return response.end("Error con imagen");
