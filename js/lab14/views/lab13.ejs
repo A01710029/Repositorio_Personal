@@ -1,0 +1,37 @@
+<%- include("includes/header.ejs") %>
+
+<body>
+    <strong>
+        ¿Qué beneficios encuentras en el estilo MVC?
+    </strong><br></br>
+        El mayor beneficio del estilo MVC es que permite dividir y organizar el código en varios archivos y 
+        folders basado en las funcionalidades de cada sección de código. Esto resulta en código más legible 
+        y más fácil de debuggear, ya que es más sencillo ubicar donde ocurren errores y no se mezclan muchos
+        lenguajes (como html y javascript) en un mismo archivo. Esto también permite utilizar secciones de 
+        código en muchas partes sin tener que escribirlo múltiples veces, particularmente a través de partials, 
+        lo que también ayuda con legibilidad y mantenimiento. Finalmente, esta estructura dividida y aislada 
+        permite un código flexible y fácil de actualizar, ya que cambios en una parte o funcionalidad del código, 
+        como por ejemplo la interfaz, no afectan (o siquiera tocan) otras funcionalidades del código, como la 
+        lógica de javascript, y se puede identificar más fácilmente donde se deben de realizar estos cambios 
+        basado en la funcionalidad que se quiere modificar. 
+        <br></br>
+    <strong>
+        ¿Encuentras alguna desventaja en el estilo arquitectónico MVC?
+    </strong><br></br>
+        La gran división y categorización del estilo MVC es mayormente un beneficio, pero viene con sus desventajas. 
+        Para empezar, es complejo de implementar al tener que entender bien la estructura de tantos folders, lo que 
+        hace fácil confundirse y perderse entre tantos archivos y subdivisiones. También, puede agregar complejidad 
+        de más tanto a aplicaciones sumamente simples, donde puede resultar en una sobrecarga de archivos, como para 
+        aplicaciones sumamente grandes, donde se manejan muchos archivos y se puede perder la claridad de la estructura.
+        <br></br>
+
+    <h3>Bibliografía</h3>
+        FreeCodeCamp. (2021, 4 febrero). Model-View Architecture. Recuperado de <a href="https://www.freecodecamp.org/news/model-view-architecture/">https://www.freecodecamp.org/news/model-view-architecture/</a> 
+        <br></br>
+        Mozilla Developer Network. (2023, 19 diciembre). MMVC (Model View Controller). Recuperado de <a href="https://developer.mozilla.org/en-US/docs/Glossary/MVC">https://developer.mozilla.org/en-US/docs/Glossary/MVC</a>
+        <br></br>
+</body>
+
+<%- include("includes/boton.ejs") %>
+
+<%- include("includes/footer.ejs") %>

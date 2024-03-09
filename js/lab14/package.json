@@ -1,0 +1,28 @@
+{
+  "name": "lab14",
+  "version": "1.0.0",
+  "description": "código para el lab 14",
+  "main": "app.js",
+  "scripts": {
+    "test": "app.js",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Repositorio_Personal"
+  },
+  "keywords": [
+    "cookies",
+    "sesiones"
+  ],
+  "author": "Paulina Almada",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
