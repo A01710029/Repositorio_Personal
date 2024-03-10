@@ -16,12 +16,28 @@ exports.postLab10 = (request, response) => {
     // Guardar objeto
     newRecomendacion.save();
 
+    //Guardar cookie con la última rec de usuario
+    response.setHeader("Set-Cookie", "cookieRec=" + rec);
+
     // Regresar a index
     response.redirect("/");
 };
 
 exports.lab10Data = (request, response) => {
-    //const Recomendacion = require("../models/lab10.model");
-    const recs = Recomendacion.fetchAll();
-    response.render("index.ejs", { recs: recs });
+    console.log("Ruta /");
+    
+    //const recs = Recomendacion.fetchAll;
+    let cookieRec = request.get("Cookie");
+  
+    //Para que el programa no truene
+    if (cookieRec) {
+      cookieRec = cookieRec.split("=")[1];
+    } else {
+      cookieRec = "";
+    }
+    console.log(cookieRec);
+    response.render("index.ejs", {
+      recs: Recomendacion.fetchAll(),
+      cookieRec: cookieRec,
+    });
 };

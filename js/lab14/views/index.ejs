@@ -38,6 +38,13 @@
                 </tr>
             <% }); %>
     </table>
+
+    <br>
+    <% if(cookieRec != "") { %>
+    <p>La última recomendación fue <%= cookieRec %>.</p>
+    <br>
+    <% } %>
+
 </body>
 
 <%- include("includes/footer.ejs") %>
