@@ -1,0 +1,18 @@
+<%- include("includes/header.ejs") %>
+
+<h3 id="title" class="title"> Mandáme recomendaciones! </h3>
+    <p> ¿Hay algún show, peli o juego que crees que me gustaría? Dime aquí:</p>
+    <br></br>
+    <div class="container">
+      <form action="/lab10" method="POST">
+        <label class="label" for="rec">Recomendación:</label>
+        <input name="rec" class="input" type="text" id="rec"><br>
+        <label class="label" for="razon">Razón:</label>
+        <input name="razon" class="input" type="text" id="razon"><br><br>
+        <button type="submit">Enviar</button>
+      </form>
+      </div>
+
+<%- include("includes/boton.ejs") %>
+
+<%- include("includes/footer.ejs") %>

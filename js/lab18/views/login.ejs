@@ -1,0 +1,18 @@
+<%- include("includes/header.ejs") %>
+
+<h3 id="title" class="title"><% if(registrar) { %>Bienvenido!<% } else { %>Hola de nuevo!<% } %> </h3>
+    <p> Ingresa tus datos:</p>
+    <br></br>
+    <div class="container">
+      <form action="/users/<% if(registrar) { %>signup<% } else { %>login<% } %>" method="POST">
+        <label class="label" for="username">Username:</label>
+        <input name="username" class="input" type="text" id="username"><br>
+        <label class="label" for="password">Contraseña:</label>
+        <input name="password" class="input" type="text" id="password"><br><br>
+        <button type="submit">Entrar</button>
+      </form>
+      </div>
+
+<%- include("includes/boton.ejs") %>
+
+<%- include("includes/footer.ejs") %>
