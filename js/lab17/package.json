@@ -1,7 +1,7 @@
 {
-  "name": "lab14",
+  "name": "lab17",
   "version": "1.0.0",
-  "description": "código para el lab 14",
+  "description": "código para el lab 17",
   "main": "app.js",
   "scripts": {
     "test": "app.js",
