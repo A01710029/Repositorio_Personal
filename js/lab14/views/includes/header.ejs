@@ -23,4 +23,18 @@
                     <option value="/lab13">Lab 13</option>
                 </optgroup>
             </select>
+
+            <% if (typeof username !== 'undefined' && username) { %>
+                <br></br>
+                Hola <strong><%- username %> </strong> 
+                <br></br>
+                <a href="/users/logout" class="button">
+                    Log Out!
+                </a>
+            <% } else { %>
+                <a href="/users/login" class="button">
+                    Log In!
+                </a>
+            <% } %>
+            
         </nav>

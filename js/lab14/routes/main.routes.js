@@ -11,7 +11,7 @@ const lab12Handler = require("../controllers/lab12.controller");
 const lab13Handler = require("../controllers/lab13.controller");
 
 //get
-router.get("/", lab10Handler.lab10Data);
+router.get("/", indexHandler.getIndex);
 router.get("/lab1", lab1Handler.getLab1);
 router.get("/lab5", lab5Handler.getLab5);
 router.get("/lab10", lab10Handler.getLab10);

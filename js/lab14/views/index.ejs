@@ -31,7 +31,7 @@
     <table>
         <tr><th>Recomendación</th><th>Razón</th></tr>
 
-        <% recs.forEach(rec => { %>
+        <% data.forEach(rec => { %>
                 <tr>
                     <td><%= rec.rec %></td>
                     <td><%= rec.razon %></td>
@@ -39,10 +39,9 @@
             <% }); %>
     </table>
 
-    <br>
     <% if(cookieRec != "") { %>
-    <p>La última recomendación fue <%= cookieRec %>.</p>
-    <br>
+    <p>La última recomendación fue <%- cookieRec %>.</p>
+    <br></br>
     <% } %>
 
 </body>

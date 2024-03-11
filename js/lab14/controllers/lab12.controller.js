@@ -1,4 +1,5 @@
 exports.getLab12 = (request, response, next) => {
-    response.render("lab12.ejs");
+    const username = request.session.username || "";
+    response.render("lab12.ejs", {username: username});
     next();
 }
