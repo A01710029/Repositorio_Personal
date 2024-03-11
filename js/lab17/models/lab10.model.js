@@ -15,13 +15,5 @@ module.exports = class Recomendacion {
 
     static fetchAll() {
         return db.execute('SELECT * FROM recomendacion')
-        .then(([rows, fields]) => {
-            console.log(rows); // Log the result
-            return rows; // Return the data
-        })
-        .catch(err => {
-            console.log(err); // Log any errors
-            throw err; // Throw the error for handling elsewhere
-        });
     }
 }
