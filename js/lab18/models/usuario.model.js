@@ -1,5 +1,8 @@
 const db = require("../util/database");
 
+//Para encriptar passwords
+const bcrypt = require("bcryptjs");
+
 module.exports = class Usuario {
     constructor(mi_username, mi_password) {
         this.username = mi_username;
@@ -7,10 +10,14 @@ module.exports = class Usuario {
     }
 
     save() {
-        return db.execute(
-            'INSERT INTO usuario (username, password) VALUES (?, ?)',
-            [this.username, this.password]
-        );
+        return bcrypt.hash(this.password, 12)
+            .then((passwordCifrada) => {
+                return db.execute(
+                    'INSERT INTO usuario (username, password) VALUES (?, ?)',
+                    [this.username, passwordCifrada]
+                );
+            })
+            .catch((error) => console.log(error));
     }
 
     static fetchAll() {
@@ -18,7 +25,7 @@ module.exports = class Usuario {
     }
 
     static fetchOne(username, password) {
-        return db.execute('SELECT * FROM usuario WHERE username=? AND password=?',
-        [username, password]);
+        return db.execute('SELECT * FROM usuario WHERE username=?',
+        [username]);
     }
 }
