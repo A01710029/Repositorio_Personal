@@ -28,16 +28,21 @@
     </body>
     
     <h3>Recomendaciones Recibidas</h3>
+    <% if (data.length > 0) { %>
     <table>
         <tr><th>Recomendación</th><th>Razón</th></tr>
 
         <% data.forEach(rec => { %>
                 <tr>
-                    <td><%= rec.rec %></td>
+                    <td><%= rec.nombre %></td>
                     <td><%= rec.razon %></td>
                 </tr>
             <% }); %>
     </table>
+    <% } else { %>
+        <p>No hay recomendaciones disponibles.</p>
+        <br></br>
+    <% } %>
 
     <% if(cookieRec != "") { %>
     <p>La última recomendación fue <%- cookieRec %>.</p>

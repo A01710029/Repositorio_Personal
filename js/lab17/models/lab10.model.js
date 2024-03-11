@@ -1,4 +1,4 @@
-const contenido = [];
+const db = require("../util/database");
 
 module.exports = class Recomendacion {
     constructor(mi_rec, mi_razon) {
@@ -7,13 +7,21 @@ module.exports = class Recomendacion {
     }
 
     save() {
-        contenido.push({
-            rec: this.rec,
-            razon: this.razon
-        });
+        return db.execute(
+            'INSERT INTO recomendacion (nombre, razon, username) VALUES (?, ?, "palmadamartinez")',
+            [this.rec, this.razon]
+        );
     }
 
     static fetchAll() {
-        return contenido;
+        return db.execute('SELECT * FROM recomendacion')
+        .then(([rows, fields]) => {
+            console.log(rows); // Log the result
+            return rows; // Return the data
+        })
+        .catch(err => {
+            console.log(err); // Log any errors
+            throw err; // Throw the error for handling elsewhere
+        });
     }
 }

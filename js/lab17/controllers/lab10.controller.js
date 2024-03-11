@@ -14,23 +14,28 @@ exports.postLab10 = (request, response) => {
     // Crear objeto Recomendacion
     const newRecomendacion = new Recomendacion(rec, razon);
 
-    // Guardar objeto
-    newRecomendacion.save();
-
-    const username = request.session.username;
-
-    //Guardar cookie con la última rec de usuario
-    response.setHeader("Set-Cookie", "cookieRec=" + rec + "; HttpOnly");
-
-    // Regresar a index
-    response.redirect("/");
+    // Guardar objeto en tabla SQL
+    newRecomendacion.save()
+        .then(([rows, fieldData]) => {
+            //Guardar cookie con la última rec de usuario
+            response.setHeader("Set-Cookie", "cookieRec=" + rec + "; HttpOnly");
+            // Regresar a index
+            response.redirect("/");
+        })
+        .catch((error) => {console.log(error)});
 };
 
 exports.lab10Data = (request, response) => {
     let cookieRec = request.cookies.cookieRec;
   
-    response.render("index.ejs", {
-      recs: Recomendacion.fetchAll(),
-      cookieRec: cookieRec,
+    Recomendacion.fetchAll().then(([rows, fieldData]) => {
+        response.render("index.ejs", {
+            recs: rows,
+            cookieRec: cookieRec,
+            username: request.session.username || "",
+          });
+    })
+    .catch((error) => {
+        console.log(error);
     });
 };
