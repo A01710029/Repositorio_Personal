@@ -39,7 +39,7 @@ exports.getSignup = (request, response, next) => {
 
 exports.postSignup = (request, response, next) => {
     const nuevoUsuario = new Usuario(request.body.username, request.body.password);
-    nuevoUsuario = save()
+    nuevoUsuario.save()
         .then(([rows, fieldData])=>{
             response.redirect("/users/login");
         })
