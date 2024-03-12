@@ -30,7 +30,7 @@ exports.postLab10 = (request, response) => {
 exports.lab10Data = (request, response) => {
     let cookieRec = request.cookies.cookieRec;
   
-    Recomendacion.fetchAll().then(([rows, fieldData]) => {
+    Recomendacion.fetch(request.params.recomendacion_id).then(([rows, fieldData]) => {
         response.render("index.ejs", {
             recs: rows,
             cookieRec: cookieRec,

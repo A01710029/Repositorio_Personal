@@ -17,4 +17,19 @@ module.exports = class Recomendacion {
     static fetchAll() {
         return db.execute('SELECT * FROM recomendacion')
     }
+
+    static fetchOne(id) {
+        return db.execute(
+            'SELECT * FROM recomendacion WHERE id=?',
+            [id]);
+    }
+
+    static fetch(id) {
+        if(id) {
+            return this.fetchOne(id);
+        } else {
+            return this.fetchAll();
+        }
+    }
+
 }
