@@ -32,15 +32,15 @@ CREATE TABLE `recomendacion` (
   `nombre` varchar(100) DEFAULT NULL,
   `razon` varchar(100) DEFAULT NULL,
   `username` varchar(50) DEFAULT NULL,
-  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `recomendacion`
 --
 
-INSERT INTO `recomendacion` (`id`, `nombre`, `razon`, `username`, `created_at`) VALUES
-(11, 'Breaking Bad', 'es joya', 'palmadamartinez', '2024-03-11 05:10:00');
+-- INSERT INTO `recomendacion` (`id`, `nombre`, `razon`, `username`, `created_at`) VALUES
+-- (11, 'Breaking Bad', 'es joya', 'palmadamartinez', '2024-03-11 05:10:00');
 
 -- --------------------------------------------------------
 
@@ -51,15 +51,15 @@ INSERT INTO `recomendacion` (`id`, `nombre`, `razon`, `username`, `created_at`) 
 CREATE TABLE `usuario` (
   `username` varchar(50) NOT NULL,
   `password` varchar(800) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL
+  `created_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `usuario`
 --
 
-INSERT INTO `usuario` (`username`, `password`, `created_at`) VALUES
-('palmadamartinez', 'palmada12', '2024-03-10 22:08:52');
+-- INSERT INTO `usuario` (`username`, `password`, `created_at`) VALUES
+-- ('palmadamartinez', 'palmada12', '2024-03-10 22:08:52');
 
 --
 -- Indexes for dumped tables
