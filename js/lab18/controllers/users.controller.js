@@ -4,9 +4,12 @@ const Usuario = require("../models/usuario.model");
 const bcrypt = require("bcryptjs");
 
 exports.getLogin = (request, response, next) => {
+    const error = request.session.error || "";
+    request.session.error = "";
     response.render("login.ejs", {
         username: request.session.username,
         registrar: false,
+        error: error,
     });
 };
 
@@ -24,12 +27,14 @@ exports.postLogin = (request, response, next) => {
                             response.redirect("/");
                         });
                     } else {
+                        request.session.error = "El usuario y/o contraseña son incorrectos."
                         return response.redirect("/users/login");
                     }
                 }).catch(err => {
                     response.redirect("/users/login");
                 });
             } else {
+                request.session.error = "El usuario y/o contraseña son incorrectos."
                 response.redirect("/users/login");
             }
         })
@@ -47,9 +52,12 @@ exports.getLogout = (request, response, next) => {
 };
 
 exports.getSignup = (request, response, next) => {
+    const error = request.session.error || "";
+    request.session.error = "";
     response.render("login.ejs", { 
         username: request.session.username || "",
         registrar: true,
+        error: error,
     });
 };
 
@@ -59,5 +67,9 @@ exports.postSignup = (request, response, next) => {
         .then(([rows, fieldData])=>{
             response.redirect("/users/login");
         })
-        .catch((error)=>{console.log(error)});
+        .catch((error)=>{
+            console.log(error);
+            request.session.error = "Usuario incorrecto";
+            response.redirect("/users/signup");
+        });
 };

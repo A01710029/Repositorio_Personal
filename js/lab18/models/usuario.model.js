@@ -17,7 +17,9 @@ module.exports = class Usuario {
                     [this.username, passwordCifrada]
                 );
             })
-            .catch((error) => console.log(error));
+            .catch((error) => {
+                console.log(error);
+                throw Error("Nombre de usuario duplicado")});
     }
 
     static fetchAll() {

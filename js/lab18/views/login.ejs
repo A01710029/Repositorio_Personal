@@ -1,6 +1,13 @@
 <%- include("includes/header.ejs") %>
 
 <h3 id="title" class="title"><% if(registrar) { %>Bienvenido!<% } else { %>Hola de nuevo!<% } %> </h3>
+
+<% if (error) { %> 
+
+<strong> <%= error %> </strong>
+
+<% } %>  
+
     <p> Ingresa tus datos:</p>
     <br></br>
     <div class="container">
