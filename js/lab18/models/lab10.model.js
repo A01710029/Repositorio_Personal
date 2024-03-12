@@ -8,8 +8,8 @@ module.exports = class Recomendacion {
 
     save() {
         return db.execute(
-            'INSERT INTO recomendacion (nombre, razon, username) VALUES (?, ?, "palmadamartinez")',
-            [this.rec, this.razon]
+            'INSERT INTO recomendacion (nombre, razon, username) VALUES (?, ?, ?)',
+            [this.rec, this.razon, username]
         );
     }
 

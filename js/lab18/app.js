@@ -20,6 +20,11 @@ app.use(session({
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+//Para agregar protección contra ataques de CSRF
+const csrf = require("csurf");
+const csrfProtection = csrf();
+app.use(csrfProtection);
+
 app.set("view-engine","ejs");
 app.set("views", "views")
 
