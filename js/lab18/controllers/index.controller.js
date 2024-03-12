@@ -5,7 +5,8 @@ exports.getIndex = async (request, response, next) => {
         const recs = await Recomendacion.fetchAll();
         const cookieRec = request.cookies.cookieRec || "";
         const username = request.session.username || "";
-        response.render("index.ejs", {data: recs, cookieRec: cookieRec, username: username});
+        const csrfToken = request.csrfToken();
+        response.render("index.ejs", {data: recs, cookieRec: cookieRec, username: username, csrfToken: csrfToken});
     } catch (error) {
         //En caso de error
         console.error("Error cargando recomendaciones", error);

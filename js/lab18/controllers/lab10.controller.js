@@ -3,16 +3,18 @@ const Recomendacion = require("../models/lab10.model");
 
 exports.getLab10 = (request, response) => {
     const username = request.session.username || "";
-    response.render("lab10.ejs", {username: username});
+    const csrfToken = request.csrfToken();
+    response.render("lab10.ejs", {username: username, csrfToken: csrfToken});
 };
 
 // Procesamiento de datos
 exports.postLab10 = (request, response) => {
     const rec = request.body.rec;
     const razon = request.body.razon;
+    const username = request.session.username || "";
 
     // Crear objeto Recomendacion
-    const newRecomendacion = new Recomendacion(rec, razon);
+    const newRecomendacion = new Recomendacion(rec, razon, username);
 
     // Guardar objeto en tabla SQL
     newRecomendacion.save()
@@ -33,6 +35,7 @@ exports.lab10Data = (request, response) => {
             recs: rows,
             cookieRec: cookieRec,
             username: request.session.username || "",
+            csrfToken: request.csrfToken(),
           });
     })
     .catch((error) => {

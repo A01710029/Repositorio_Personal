@@ -5,6 +5,7 @@
     <br></br>
     <div class="container">
       <form action="/lab10" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
         <label class="label" for="rec">Recomendación:</label>
         <input name="rec" class="input" type="text" id="rec"><br>
         <label class="label" for="razon">Razón:</label>
