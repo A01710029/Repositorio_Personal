@@ -3,7 +3,6 @@ const Recomendacion = require("../models/lab10.model");
 exports.getIndex = async (request, response, next) => {
     try {
         const recs = await Recomendacion.fetchAll();
-        console.log(recs);
         const cookieRec = request.cookies.cookieRec || "";
         const username = request.session.username || "";
         const csrfToken = request.csrfToken();
