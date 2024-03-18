@@ -3,6 +3,10 @@ const  express = require("express");
 const router = express.Router();
 const isAuth = require("../util/is-auth");
 
+//Para utilizaar RBAC
+const canView = require("../util/can-view");
+const canAdmin = require("../util/can-admin");
+
 //Para utilizar controllers
 const indexHandler = require("../controllers/index.controller");
 const lab1Handler = require("../controllers/lab1.controller");
@@ -14,14 +18,14 @@ const lab17Handler = require("../controllers/lab17.controller");
 const lab18Handler = require("../controllers/lab18.controller");
 
 //get
-router.get("/", isAuth, indexHandler.getIndex);
-router.get("/lab1", isAuth, lab1Handler.getLab1);
-router.get("/lab5", isAuth, lab5Handler.getLab5);
-router.get("/lab10", isAuth, lab10Handler.getLab10);
-router.get("/lab12", isAuth, lab12Handler.getLab12); 
-router.get("/lab13", isAuth, lab13Handler.getLab13); 
-router.get("/lab17", isAuth, lab17Handler.getLab17); 
-router.get("/lab18", isAuth, lab18Handler.getLab18); 
+router.get("/", isAuth, canView, indexHandler.getIndex);
+router.get("/lab1", isAuth, canView, lab1Handler.getLab1);
+router.get("/lab5", isAuth, canView, lab5Handler.getLab5);
+router.get("/lab10", isAuth, canAdmin, lab10Handler.getLab10);
+router.get("/lab12", isAuth, canView, lab12Handler.getLab12); 
+router.get("/lab13", isAuth, canView, lab13Handler.getLab13); 
+router.get("/lab17", isAuth, canView, lab17Handler.getLab17); 
+router.get("/lab18", isAuth, canView, lab18Handler.getLab18); 
 
 //post 
 router.post("/lab10", isAuth, lab10Handler.postLab10);

@@ -4,7 +4,8 @@ const Recomendacion = require("../models/lab10.model");
 exports.getLab10 = (request, response) => {
     const username = request.session.username || "";
     const csrfToken = request.csrfToken();
-    response.render("lab10.ejs", {username: username, csrfToken: csrfToken});
+    const permisos = request.session.permisos || [];
+    response.render("lab10.ejs", {username: username, csrfToken: csrfToken, permisos: permisos});
 };
 
 // Procesamiento de datos
@@ -36,6 +37,7 @@ exports.lab10Data = (request, response) => {
             cookieRec: cookieRec,
             username: request.session.username || "",
             csrfToken: request.csrfToken(),
+            permisos: request.session.permisos || [],
           });
     })
     .catch((error) => {
