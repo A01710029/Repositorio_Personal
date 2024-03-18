@@ -16,6 +16,7 @@ const lab12Handler = require("../controllers/lab12.controller");
 const lab13Handler = require("../controllers/lab13.controller");
 const lab17Handler = require("../controllers/lab17.controller");
 const lab18Handler = require("../controllers/lab18.controller");
+const lab19Handler = require("../controllers/lab19.controller");
 
 //get
 router.get("/", isAuth, canView, indexHandler.getIndex);
@@ -26,6 +27,7 @@ router.get("/lab12", isAuth, canView, lab12Handler.getLab12);
 router.get("/lab13", isAuth, canView, lab13Handler.getLab13); 
 router.get("/lab17", isAuth, canView, lab17Handler.getLab17); 
 router.get("/lab18", isAuth, canView, lab18Handler.getLab18); 
+router.get("/lab19", isAuth, canView, lab19Handler.getLab19); 
 
 //post 
 router.post("/lab10", isAuth, lab10Handler.postLab10);

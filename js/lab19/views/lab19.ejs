@@ -1,0 +1,41 @@
+<%- include("includes/header.ejs") %>
+
+<body>
+    <strong>
+        ¿En qué consiste el control de acceso basado en roles?
+    </strong><br></br>
+        El control de acceso basado en roles es un método para gestionar las funcionalidades que
+        ciertos usuarios pueden llevar a cabo dentro de un programa. Permite limitar cuánto de un
+        programa puede ser manipulado y/o visto. Implica la creación y asignación de roles con 
+        permisos específicos a los usuarios del programa, los que definen las acciones y secciones
+        que puede realizar y acceder un usuario. Es un método de seguridad que protege la integridad
+        y confidencialidad de los datos del sistema. 
+        <br></br>
+    <strong>
+        Investiga y describe 2 sistemas, uno que aplique RBAC y uno que no. Realiza un análisis de 
+        las ventajas y desventajas de cada uno con respecto al control de acceso.
+    </strong><br></br>
+        Las ventajas de utilizar RBAC para controlar el acceso es que permite estandarizar el proceso
+        de asignación de permisos y limitaciones, al simplemente tener que asignar un único set de roles 
+        a los usuarios en vez de tener que configurar los permisos de cada usuario individualmente. Esto
+        en sí limita los errores humanos, simplifica el proceso y mejora la escalabilidad del sistema. 
+        Las desventajas son que la implementación de RBAC es compleja al principio e implica invertir el
+        tiempo y esfuerzo para su configuración y la falta de flexibilidad al ser un método tan 
+        estandarizado. Todo se tiene que delimitar dentro de los límites de los roles diseñados. 
+        Por lo mismo, una de las ventajas de no utilizar RBAC y más bien configurar los permisos
+        individualmente y manualmente es la flexibilidad de asignar permisos específicos basados en
+        necesidades y casos que no se pueden considerar en sistemas estandarizados y tener un major control 
+        sobre los recursos del programa (ya que se tienen que configurar permisos para cada ruta y archivo). 
+        Las desventajas son que no es escalable, ya que se tiene que llevar a cabo el proceso para cada nuevo
+        usuario y recurso, y no es tan seguro, ya que se puede dar demasiado poder o flexibilidad a los
+        usuarios que ponen en riesgo la integridad del sistema y sus datos.
+        <br></br>
+
+    <h3>Bibliografía</h3>
+        IONOS. (2020, 14 octubre). Qué es el Role-Based Access Control (RBAC)? Recuperado de <a href="https://www.ionos.mx/digitalguide/servidores/seguridad/que-es-el-role-based-access-control-rbac/">https://www.ionos.mx/digitalguide/servidores/seguridad/que-es-el-role-based-access-control-rbac/</a> 
+        <br></br>
+</body>
+
+<%- include("includes/boton.ejs") %>
+
+<%- include("includes/footer.ejs") %>
