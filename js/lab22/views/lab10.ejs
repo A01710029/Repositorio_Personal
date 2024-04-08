@@ -4,12 +4,12 @@
     <p> ¿Hay algún show, peli o juego que crees que me gustaría? Dime aquí:</p>
     <br></br>
     <div class="container">
-      <form action="/lab10" method="POST">
+      <form action="/lab10" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
         <label class="label" for="rec">Recomendación:</label>
         <input name="rec" class="input" type="text" id="rec"><br>
         <label class="label" for="razon">Razón:</label>
-        <input name="razon" class="input" type="text" id="razon"><br><br>
+        <input name="razon" class="input" type="file" id="razon"><br><br>
         <button type="submit">Enviar</button>
       </form>
       </div>

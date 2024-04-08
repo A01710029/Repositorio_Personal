@@ -20,6 +20,26 @@ app.use(session({
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+//Para utilizar uploads
+app.use("/uploads", express.static(path.join(__dirname, "../../uploads")));
+//Para utilizar multer (manejo de archivos)
+const multer = require("multer");
+
+//fileStorage (constante de config para manejar el almacenamiento de archivos)
+const fileStorage = multer.diskStorage ({
+    destination: (request, file, callback) => {
+        //Configurar donde se sube el archivo
+        callback(null, path.join(__dirname, "../../uploads"));
+    },
+    filename: (requets, file, callback) => {
+        //Configurar nombre del archivo
+        callback(null, Number(new Date()).toString() + '-' + file.originalname);
+    },
+});
+
+//debe de tener mismo nombre que el archivo in the form
+app.use(multer({storage: fileStorage}).single("razon"));
+
 //Para agregar protección contra ataques de CSRF
 const csrf = require("csurf");
 const csrfProtection = csrf();

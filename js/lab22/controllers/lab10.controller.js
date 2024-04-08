@@ -1,5 +1,6 @@
 const { log } = require("console");
 const Recomendacion = require("../models/lab10.model");
+const fs = require('fs');
 
 exports.getLab10 = (request, response) => {
     const username = request.session.username || "";
@@ -11,8 +12,16 @@ exports.getLab10 = (request, response) => {
 // Procesamiento de datos
 exports.postLab10 = (request, response) => {
     const rec = request.body.rec;
-    const razon = request.body.razon;
+    const razonFile = request.file;
     const username = request.session.username || "";
+
+    let razon = "";
+
+    if (razonFile) {
+        razon = fs.readFileSync(razonFile.path, 'utf8');
+    } else {
+        return response.status(400).send("No se ha subido un archivo de texto");
+    }
 
     // Crear objeto Recomendacion
     const newRecomendacion = new Recomendacion(rec, razon, username);
