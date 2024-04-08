@@ -1,0 +1,34 @@
+<%- include("includes/header.ejs") %>
+
+<body>
+    <strong>
+        ¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?
+    </strong><br></br>
+        Las ventajas de esribir el código SQL solamene en la capa del modelo son mayormente que permite una mejor organización.
+        Se puede separar la base de datos de la lógica del resto de la aplicación, lo que en si hace que las consultas a la
+        base de datos sean reusables, ya que no se repite el código. Además, esto se considera una práctica de manejo de datos
+        más segura, ya que se pueden implementar medidas de seguridad de manera uniforme. También se debe de considerar que, al
+        solo tener que actualizar la capa del modelo en caso necesario, esta es una estructura más flexible y escalable a largo
+        plazo para el programa.
+        <br></br>
+    <strong>
+        ¿Qué es SQL injection y cómo se puede prevenir?
+    </strong><br></br>
+        La SQL injection es un tipo de hackeo en el que una persona inserta código SQL ajeno en las consultas de una página web.
+        Se puede prevenir de varias maneras, incluyendo el asignar parámetros a las consultas para no utilizar los valores del
+        usuario directamente, lo que los separa del código SQL y evita que una persona ajena pueda manipular la consulta. Se
+        puede lograr algo similar al aplicar validaciones a los datos ingresados por un usuario, ya que de nuevo de esta manera 
+        se para el ingreso de datos no válidos antes de que puedan ingresar a la base de datos. Finalmente, se puede limitar el
+        acceso a la base de datos solamente a operaciones que lo requieran, lo que reduce las ventanas de oportunidad para que 
+        una persona ajena pueda siquiera intentar atacar la base de datos y además restringir las acciones que puede realizar si
+        es que llega a infiltrarla de alguna manera. 
+        <br></br>
+
+    <h3>Bibliografía</h3>
+        Kaspersky. (2022, 9 octubre). Injection. Recuperado de <a href="https://latam.kaspersky.com/resource-center/definitions/sql-injection">https://latam.kaspersky.com/resource-center/definitions/sql-injection</a> 
+        <br></br>
+</body>
+
+<%- include("includes/boton.ejs") %>
+
+<%- include("includes/footer.ejs") %>
