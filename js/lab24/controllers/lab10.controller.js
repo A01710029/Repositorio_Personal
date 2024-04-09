@@ -40,9 +40,9 @@ exports.postLab10 = (request, response) => {
 exports.lab10Data = (request, response) => {
     let cookieRec = request.cookies.cookieRec;
   
-    Recomendacion.fetch(request.params.recomendacion_id).then(([rows, fieldData]) => {
+    Recomendacion.fetch(request.params.recomendacion_id).then(([recs, fieldData]) => {
         response.render("index.ejs", {
-            recs: rows,
+            recs: recs,
             cookieRec: cookieRec,
             username: request.session.username || "",
             csrfToken: request.csrfToken(),
@@ -52,4 +52,16 @@ exports.lab10Data = (request, response) => {
     .catch((error) => {
         console.log(error);
     });
+};
+
+exports.postDelete = (request, response, next) => {
+    Recomendacion.delete(request.body.id)
+    .then(() => {
+        Recomendacion.fetch()
+        .then(([recs, fieldData]) => {
+            return response.status(200).json({recs: recs})
+        })
+        .catch((error) => {console.log(error)})
+    })
+    .catch((error) => {console.log(error)});
 };

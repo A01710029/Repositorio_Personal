@@ -32,4 +32,7 @@ module.exports = class Recomendacion {
         }
     }
 
+    static delete(id) {
+        return db.execute('DELETE FROM recomendacion WHERE id=?', [id]);
+    }
 }

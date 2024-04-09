@@ -31,5 +31,6 @@ router.get("/lab19", isAuth, canView, lab19Handler.getLab19);
 
 //post 
 router.post("/lab10", isAuth, lab10Handler.postLab10);
+router.post("/delete", isAuth, lab10Handler.postDelete);
 
 module.exports = router;
