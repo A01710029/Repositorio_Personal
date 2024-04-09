@@ -1,0 +1,47 @@
+<%- include("includes/header.ejs") %>
+
+<strong>
+    ¿Qué importancia tiene AJAX en el desarrollo de RIA's (Rich Internet Applications)?
+</strong><br></br>
+    AJAX es de gran importancia en el desarrollo de RIA's al permitir la interacción asíncrona
+    con la base de datos, lo que resulta en respuestas más rápidas y una experiencia fluida 
+    para el usuario, ya que no se tiene que recargar la aplicación cuando se actualizan
+    ciertas partes de la interfaz. Esto es un componente clave de las aplicaciones dinámicas.
+    Además, esto permite mejorar el rendimiento de la aplicación al reducir el tiempo de espera
+    para cargar o procesar datos y la cantidad de datos transferidos entre cliente y servidor.  
+    <br></br>
+<strong>
+    ¿Qué implicaciones de seguridad tiene AJAX? ¿Dónde se deben hacer las validaciones de 
+    seguridad, del lado del cliente o del lado del servidor?
+</strong><br></br>
+    La gran interactividad y dependencia en procesos asíncronos de AJAX crea ciertos riesgos de 
+    seguridad. Entre estas, están los ataques Cross-Site Scripting (XSS) y Cross-Site 
+    Request Forgery (CSRF). Por esto, se deben validar los datos del servidor antes de actualizar
+    la interfaz al igual que validar las solicitudes a través de tokens. También es importante 
+    controlar el acceso a recursos del servidor con RBAC. Considerando esto, es recomendable y
+    buena práctica hacer las validaciones de seguridad del lado del servidor ya que es menos
+    vulnerable y más seguro. Pueden ser complementadas con validaciones del lado del cliente para 
+    identificar errores rápidamente y mejorar la experiencia de usuario, pero las validaciones de 
+    seguridad deberían estar mayormente del lado del servidor. 
+    <br></br>
+<strong>
+    ¿Qué es JSON?
+</strong><br></br>
+    JSON, o JavaScript Object Notation, es un formato de intercambio de datos que es tanto ligero
+    y flexible como legible y fácil de mantener. Es usado comunmente en el desarrollo de aplicaciones 
+    web para representar datos estructurados y para la escritura y manejo de datos dentro de estos 
+    sistemas. Facilita la comunicación entre el cliente y el servidor. 
+    <br></br>
+
+<h3>Bibliografía</h3>
+    FasterCapital. (2024, 16 marzo). AJAX JavaScript y XML asincronicos el poder de AJAX en los RIA modernos. Recuperado de <a href="https://fastercapital.com/es/contenido/AJAX--JavaScript-y-XML-asincronicos--el-poder-de-AJAX-en-los-RIA-modernos.html">https://fastercapital.com/es/contenido/AJAX--JavaScript-y-XML-asincronicos--el-poder-de-AJAX-en-los-RIA-modernos.html</a> 
+    <br></br>
+    IBM. (2021, 3 abril). ¿Qué es Ajax?. Recuperado de <a href="https://www.ibm.com/docs/es/rational-soft-arch/9.6.1?topic=page-asynchronous-javascript-xml-ajax-overview">https://www.ibm.com/docs/es/rational-soft-arch/9.6.1?topic=page-asynchronous-javascript-xml-ajax-overview</a> 
+    <br></br>
+    IBM. (2022, 6 julio). Formato JSON (JavaScript Object Notation). Recuperado de <a href="https://www.ibm.com/docs/es/baw/20.x?topic=formats-javascript-object-notation-json-format">https://www.ibm.com/docs/es/baw/20.x?topic=formats-javascript-object-notation-json-format</a> 
+    <br></br>
+</body>
+
+<%- include("includes/boton.ejs") %>
+
+<%- include("includes/footer.ejs") %>
