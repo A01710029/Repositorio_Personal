@@ -1,0 +1,63 @@
+<%- include("includes/header.ejs") %>
+
+<strong>
+    ¿Qué ventajas y desventajas tiene la integración de tus aplicaciones web con servicios web 
+    desarrollados por terceros?
+</strong><br></br>
+    La integración de servicios web de terceros nos permite llevar a cabo acciones o funcionalidades, 
+    como los pagos en línea o la reproducción de música, sin tener que programarlas totalmente desde
+    cero y con, posiblemente, menos experiencia en esos temas particulares a diferencia de los 
+    desarrolladores del API. Al mismo tiempo, se pierde control de este aspecto de la funcionalidad de 
+    esa parte de la aplicación, ya que su mantenimiento y disponibilidad las manejan los desarrolladores
+    y posiblemente pueden aumentar los costos de operación o riesgos de seguridad, dependiendo de su 
+    estructura y el compartir datos con terceros.
+    <br></br>
+
+<h3>Bibliografía</h3>
+    FasterCapital. (2024, 16 marzo). AJAX JavaScript y XML asincronicos el poder de AJAX en los RIA modernos. Recuperado de <a href="https://fastercapital.com/es/contenido/AJAX--JavaScript-y-XML-asincronicos--el-poder-de-AJAX-en-los-RIA-modernos.html">https://fastercapital.com/es/contenido/AJAX--JavaScript-y-XML-asincronicos--el-poder-de-AJAX-en-los-RIA-modernos.html</a> 
+    <br></br>
+</body>
+
+<h3 title>Spotify: Playlist del Mes</h3>
+
+<div id="spotify" class="flex justify-center items-center h-screen">
+    <div id="spotifyPlaylist" class="w-full max-w-xl">
+    <script>
+            const playlistId = '4SuIapcn8FJbzDG32dPPCM?';
+            const accessToken = 'e554fa60e8344f6495d005de9cc7ee59';
+        
+            fetch(`https://api.spotify.com/v1/playlists/${playlistId}`, {
+            headers: {
+                'Authorization': `Bearer ${accessToken}`
+            }
+            })
+            .then(response => response.json())
+            .then(data => {
+            const playlist = data;
+            const playlistEmbedUrl = `https://open.spotify.com/embed/playlist/${playlistId}`;
+
+            const container = document.getElementById('spotify');
+            container.style.display = 'flex';
+
+            const iframe = document.createElement('iframe');
+            iframe.src = playlistEmbedUrl;
+            iframe.title = 'Spotify Embed: Programming Playlist';
+            iframe.className = 'w-full';
+            iframe.width = '100%';
+            iframe.height = '152';
+            iframe.style.minHeight = '100px';
+            iframe.frameBorder = '0';
+            iframe.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+            iframe.loading = 'lazy';
+
+            container.appendChild(iframe);
+            
+            })
+            .catch(error => console.error('Error:', error));
+      </script>
+      </div>
+</div>
+
+<%- include("includes/boton.ejs") %>
+
+<%- include("includes/footer.ejs") %>
